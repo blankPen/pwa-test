@@ -36,4 +36,3 @@ node_modules/
 
 # Webpack
 bundles/
-dist/

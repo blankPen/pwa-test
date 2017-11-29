@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6" > <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7" > <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8" > <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie9" > <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>examples</title>
+
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+  
+
+  
+
+</head>
+<body>
+
+
+
+<div id="main"></div>
+
+
+
+
+<div id="partial">
+
+<p>Webpack entry is: 
+<ul>
+
+  <li>/Users/pengzhen/Documents/pwa-test/src/index</li>
+
+</ul>
+
+</div>
+
+
+
+
+<script src="/main-d3c4b384288fd6defb37.js"></script>
+
+
+
+
+
+
+  <div><h1>Service worker detected: <span id="sw-msg"></span></h1></div>
+  <script type="text/javascript">
+
+  // Register Service worker
+  (function(serviceWorkerFilename) {
+    // serviceWorkerFilename === './my-service-worker.js' as specified in webpack.config.js
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register(serviceWorkerFilename)
+        .then(function() {
+          log('Service worker registered!');
+        })
+        .catch(function(error) {
+          log('Error registering service worker: ', error);
+        });
+    } else {
+      log('Not supported by browser');
+    }
+  })('/my-service-worker.js');
+
+
+  // logger
+  function log(msg) {
+    var swMsg = document.getElementById('sw-msg');
+    console.log(msg);
+    swMsg.innerText = msg;
+  }
+  </script>
+
+
+
+</body>
+</html>
